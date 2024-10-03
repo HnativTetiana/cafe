@@ -5,7 +5,7 @@
 3. npm install @types/react @types/react-dom - for using TS
 4. Also you need to add a div with id="modal" in the body of the index.html file
 
-## Here is the link to the site: https://react-cafe2024.netlify.app
+## Here is the link to the site: https://cafe2024.netlify.app
 
 ## Getting Started with Create React App
 

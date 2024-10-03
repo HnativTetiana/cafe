@@ -17,7 +17,7 @@ const Cart: React.FC<CartInterface> = ({ isOpen, modalClose, cocktailsCart }) =>
     const modalElement = document.getElementById("modal");
 
     const confirmHandler = () => {
-        console.log(cocktailsCart);
+        console.log({ "Ordered drinks": cocktailsCart });
         modalClose();
         dispatch(cartRemoveAll());
     }
