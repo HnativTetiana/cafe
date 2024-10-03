@@ -1,0 +1,21 @@
+@use "reset";
+@use "scss";
+
+// --------------------------------------- Common ---------------------------------------
+
+#root {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: scss.$font-size-16;
+    color: scss.$text-color;
+    background-color: scss.$background-color;
+    height: 100vh;
+}
+
+a {
+    color: scss.$text-color;
+}
+
+.no-available-title {
+    @include scss.text-styles($font-weight: scss.$font-weight-600, $font-size: scss.$font-size-28, $text-align: center, $text-color: scss.$brown-color);
+}

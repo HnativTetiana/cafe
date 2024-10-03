@@ -1,0 +1,73 @@
+@use "sass:color";
+
+//  Functions:  lighten, darken, saturate, adjust-hue
+
+// -------------------------------------- Variables --------------------------------------
+
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-20: 20px;
+$font-size-24: 24px;
+$font-size-28: 28px;
+$font-size-30: 30px;
+
+$text-color: #800000;
+$white-color: #fff;
+$black-color: #000;
+
+$brown-color: darken($text-color, 10%);
+$orange-color: #ff7800;
+
+$background-color: #edbb99;
+$second-background-color: saturate(darken(adjust-hue($background-color, 10deg), 4%), 30%);
+
+// --------------------------------------- Mixins ---------------------------------------
+
+@mixin flex-property($gap: 0, $flex-direction: row, $align-items: stretch, $justify-content: flex-start, $flex-wrap: nowrap) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    flex-wrap: $flex-wrap;
+    gap: $gap;
+}
+
+@mixin text-styles($font-weight: $font-weight-400, $font-size: $font-size-16, $text-align: left, $text-color: $text-color) {
+    font-family: "Montserrat", sans-serif;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    text-align: $text-align;
+    color: $text-color;
+}
+
+@mixin border-container($border-color: lighten($brown-color, 8%), $border-radius: 10px, $padding: 20px) {
+    border: 2px solid $border-color;
+    border-radius: $border-radius;
+    padding: $padding;
+}
+
+// ---------------------------------- Extend/Inheritance ----------------------------------
+
+%flex-center {
+    @include flex-property($align-items: center, $justify-content: center);
+}
+
+%button-styles {
+    @include text-styles($font-weight: $font-weight-500, $text-align: center, $text-color: $brown-color);
+    letter-spacing: 1px;
+    background-color: $orange-color;
+    border-color: $orange-color;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+        background-color: lighten($orange-color, 15%);
+    }
+}

@@ -1,0 +1,231 @@
+.order-button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #4d0000;
+  letter-spacing: 1px;
+  background-color: #ff7800;
+  border-color: #ff7800;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+.order-button:focus, .order-button:hover {
+  background-color: #ffa14d;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  min-height: calc(100vh - 240px);
+  background-color: #edbb99;
+  padding: 100px 20px;
+}
+
+.cocktail-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  cursor: pointer;
+}
+.cocktail-information img {
+  width: 400px;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .cocktail-information img {
+    width: 300px;
+  }
+}
+@media (max-width: 425px) {
+  .cocktail-information img {
+    width: 250px;
+  }
+}
+.cocktail-information h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  color: #4d0000;
+}
+.cocktail-information .cocktail-details {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
+  width: 100%;
+}
+.cocktail-information .cocktail-details h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #800000;
+}
+.cocktail-information .cocktail-details p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  color: #800000;
+}
+.cocktail-information .cocktail-details p span {
+  font-weight: 500;
+}
+
+.order-button {
+  font-size: 18px;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 50px;
+}
+.main-page h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  color: #4d0000;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .main-page h1 {
+    font-size: 28px;
+  }
+}
+.main-page .random-cocktail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
+  border: 2px solid #760000;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  min-width: 200px;
+}
+.main-page .random-cocktail .recommendation-label {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  background-color: #DE3163;
+  padding: 10px;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  left: 8px;
+  border-radius: 10px;
+}
+.main-page .random-cocktail .recommendation-label span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
+.main-page .random-cocktail a {
+  margin-top: 30px;
+}
+.main-page .random-cocktail .cocktail-information p {
+  padding-left: 20px;
+}
+
+.cocktails-list {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1500px;
+}
+.cocktails-list li {
+  border: 2px solid #760000;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+}
+.cocktails-list li .cocktail-information img {
+  width: 300px;
+}
+@media (max-width: 425px) {
+  .cocktails-list li .cocktail-information img {
+    width: 250px;
+  }
+}
+
+.cocktail-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 50px;
+}
+.cocktail-page h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #800000;
+  margin-bottom: 30px;
+}
+.cocktail-page .cocktail-ingredients-container {
+  max-width: 400px;
+}
+.cocktail-page .cocktail-information {
+  gap: 40px;
+}
+@media (max-width: 425px) {
+  .cocktail-page .cocktail-information img {
+    width: 300px;
+  }
+}
+.cocktail-page .cocktail-information .cocktail-details {
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.cocktail-page .cocktail-information .cocktail-details h3 {
+  align-self: center;
+  margin-bottom: 10px;
+}
+.cocktail-page .cocktail-ingredients {
+  width: 100%;
+}
+.cocktail-page .cocktail-ingredients ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.cocktail-page .cocktail-ingredients ul li {
+  font-size: 18px;
+}
+.cocktail-page .cocktail-instructions p {
+  line-height: 24px;
+  max-width: 800px;
+}/*# sourceMappingURL=Main.css.map */

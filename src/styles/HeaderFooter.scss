@@ -1,0 +1,112 @@
+@use "scss";
+
+// --------------------------------------- Header ---------------------------------------
+
+header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-around;
+    $align-items: center;
+
+    background-color: scss.$second-background-color;
+    min-height: 120px;
+    box-sizing: border-box;
+    padding: 20px;
+
+    @media (max-width:768px) {
+        grid-template-columns: auto auto;
+        gap: 30px;
+    }
+
+    .logo-link {
+        @include scss.text-styles($font-weight: scss.$font-weight-700, $font-size: scss.$font-size-20, $text-color: scss.$brown-color);
+        @include scss.flex-property($align-items: center);
+
+        .cocktail-icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .search-container {
+        @include scss.flex-property($gap: 20px, $align-items: center);
+
+        @media (max-width:768px) {
+            grid-area: 2 / 1 / span 1 / span 2;
+            justify-self: center;
+        }
+
+        @media (max-width:425px) {
+            flex-direction: column;
+        }
+
+        input {
+            @include scss.text-styles($text-align: center, $text-color: scss.$black-color);
+            width: 280px;
+            box-sizing: border-box;
+            padding: 5px 8px;
+        }
+
+        button {
+            @extend %button-styles;
+        }
+    }
+
+    .cart-container {
+        position: relative;
+        @include scss.flex-property($justify-content: flex-end);
+
+        .fa-shopping-cart {
+            font-size: 28px;
+            color: scss.$text-color;
+            cursor: pointer;
+
+            &:focus,
+            &:hover {
+                color: scss.$brown-color;
+            }
+        }
+
+        .bubble-icon {
+            @include scss.flex-property($align-items: center, $justify-content: center);
+
+            background-color: rgb(scss.$orange-color, 0.85);
+            min-width: 25px;
+            height: 25px;
+            border-radius: 50%;
+
+            position: absolute;
+            top: -15px;
+            right: -15px;
+
+            span {
+                @include scss.text-styles($font-weight: scss.$font-weight-700, $text-color: scss.$brown-color);
+            }
+        }
+    }
+}
+
+
+// --------------------------------------- Footer ---------------------------------------
+
+footer {
+    @include scss.flex-property($align-items: center, $justify-content: center);
+    background-color: scss.$second-background-color;
+    min-height: 120px;
+    box-sizing: border-box;
+    padding: 20px;
+
+    ul {
+        @include scss.flex-property($gap: 30px, $flex-wrap: wrap);
+        @include scss.text-styles($font-weight: scss.$font-weight-600, $font-size: scss.$font-size-20);
+
+        a {
+
+            &:focus,
+            &:hover {
+                color: scss.$white-color;
+            }
+        }
+    }
+}

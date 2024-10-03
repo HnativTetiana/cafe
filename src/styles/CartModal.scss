@@ -1,0 +1,73 @@
+@use "scss";
+
+// --------------------------------------- Cart Modal ---------------------------------------
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(darken(scss.$white-color, 50%), 0.5);
+}
+
+.cart-modal {
+    @include scss.flex-property($gap: 30px, $flex-direction: column, $align-items: center);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: scss.$second-background-color;
+
+    @include scss.border-container($border-color: scss.$orange-color);
+    max-height: 600px;
+    padding-top: 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 0 30px 10px lighten(scss.$black-color, 50%);
+
+    .cart-close-butoon,
+    .cocktail-delete-button {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        @include scss.flex-property($align-items: center, $justify-content: center);
+    }
+
+    .cart-close-butoon {
+        top: 10px;
+        right: 10px;
+        @include scss.border-container($border-radius: 5px, $padding: 10px);
+        border-width: 1px;
+    }
+
+    .cocktails-list {
+        margin-top: 30px;
+
+        li {
+            max-width: 250px;
+            position: relative;
+
+            .cocktail-information {
+                img {
+                    width: 250px;
+
+                    @media (max-width:425px) {
+                        width: 200px;
+                    }
+                }
+            }
+
+            .cocktail-delete-button {
+                top: 5px;
+                right: 5px;
+                @include scss.border-container($border-color: scss.$orange-color, $border-radius: 50%, $padding: 5px);
+            }
+        }
+    }
+
+    .confirm-order-button {
+        @extend %button-styles;
+    }
+}

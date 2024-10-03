@@ -1,0 +1,181 @@
+@use "scss";
+
+// ---------------------------------------- Main ----------------------------------------
+
+main {
+    @include scss.flex-property($flex-direction: column, $align-items: center, $justify-content: center);
+    min-height: calc(100vh - 240px);
+    background-color: scss.$background-color;
+    padding: 100px 20px;
+}
+
+.cocktail-information {
+    @include scss.flex-property($gap: 20px, $flex-direction: column, $align-items: center);
+    cursor: pointer;
+
+    img {
+        width: 400px;
+        border-radius: 10px;
+
+        @media (max-width:768px) {
+            width: 300px;
+        }
+
+        @media (max-width:425px) {
+            width: 250px;
+        }
+    }
+
+    h2 {
+        @include scss.text-styles($font-weight: scss.$font-weight-600, $font-size: scss.$font-size-24, $text-align: center, $text-color: scss.$brown-color);
+    }
+
+    .cocktail-details {
+        @include scss.flex-property($gap: 30px, $flex-direction: column);
+        width: 100%;
+
+        h3 {
+            @include scss.text-styles($font-weight: scss.$font-weight-500, $font-size: scss.$font-size-20, $text-align: center);
+        }
+
+        p {
+            @include scss.text-styles($font-size: scss.$font-size-18);
+
+            span {
+                font-weight: scss.$font-weight-500;
+            }
+        }
+    }
+}
+
+.order-button {
+    @extend %button-styles;
+    font-size: scss.$font-size-18;
+}
+
+// ------------------------------ Main Page ------------------------------
+
+.main-page {
+    @include scss.flex-property($gap: 50px, $flex-direction: column, $align-items: center, $justify-content: center);
+
+    h1 {
+        @include scss.text-styles($font-weight: scss.$font-weight-700, $font-size: scss.$font-size-30, $text-align: center, $text-color: scss.$brown-color);
+        margin-bottom: 20px;
+
+        @media (max-width:768px) {
+            font-size: 28px;
+        }
+    }
+
+    .random-cocktail {
+        @include scss.flex-property($gap: 30px, $flex-direction: column, $align-items: center);
+        @include scss.border-container;
+        position: relative;
+        min-width: 200px;
+
+        .recommendation-label {
+            @include scss.flex-property($justify-content: center);
+
+            background-color: #DE3163;
+            padding: 10px;
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            left: 8px;
+            border-radius: 10px;
+
+            span {
+                @include scss.text-styles($font-weight: scss.$font-weight-600, $font-size: scss.$font-size-18, $text-align: center, $text-color: scss.$white-color);
+            }
+        }
+
+        a {
+            margin-top: 30px;
+        }
+
+        .cocktail-information {
+            p {
+                padding-left: 20px;
+
+            }
+        }
+    }
+}
+
+// ------------------------------ Cocktails List ------------------------------
+
+.cocktails-list {
+    @include scss.flex-property($gap: 30px, $justify-content: center, $flex-wrap: wrap);
+    max-width: 1500px;
+
+    li {
+        @include scss.border-container;
+        max-width: 300px;
+
+        .cocktail-information {
+            img {
+                width: 300px;
+
+                @media (max-width:425px) {
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
+
+// ------------------------------ Cocktail Page ------------------------------
+
+.cocktail-page {
+    @include scss.flex-property($gap: 50px, $flex-direction: column, $align-items: center);
+
+    h3 {
+        @include scss.text-styles($font-weight: scss.$font-weight-500, $font-size: scss.$font-size-20, $text-align: center);
+        margin-bottom: 30px;
+    }
+
+    .cocktail-ingredients-container {
+        max-width: 400px;
+    }
+
+    .cocktail-information {
+        gap: 40px;
+
+        img {
+            @media (max-width:425px) {
+                width: 300px;
+            }
+        }
+
+        .cocktail-details {
+            align-items: flex-start;
+            width: 100%;
+
+            h3 {
+                align-self: center;
+                margin-bottom: 10px;
+            }
+
+            margin-bottom: 50px;
+        }
+    }
+
+    .cocktail-ingredients {
+        width: 100%;
+
+        ul {
+            @include scss.flex-property($gap: 20px, $flex-direction: column, $align-items: flex-start);
+
+            li {
+                font-size: scss.$font-size-18;
+            }
+        }
+    }
+
+    .cocktail-instructions {
+        p {
+            line-height: 24px;
+            max-width: 800px;
+        }
+    }
+}
